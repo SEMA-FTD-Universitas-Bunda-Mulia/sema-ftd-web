@@ -1,7 +1,7 @@
 import { SidebarProvider } from "@/components/ui/sidebar";
-import { Navbar } from "./navbar";
-import { NavbarSidebar } from "./navbar-sidebar";
-import { Footer } from "./footer";
+import { Navbar } from "@/modules/home/ui/components/navbar";
+import { NavbarSidebar } from "@/modules/home/ui/components/navbar-sidebar";
+import { Footer } from "@/modules/home/ui/components/footer";
 
 interface Props {
   children: React.ReactNode;

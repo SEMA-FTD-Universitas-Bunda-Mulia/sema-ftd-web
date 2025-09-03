@@ -21,7 +21,7 @@ const NavbarItem = ({ href, isActive, children }: NavbarItemProps) => {
       asChild
       variant="noShadow"
       className={cn(
-        "bg-transparent hover:bg-transparent border-transparent hover:underline hover:decoration-2 hover:underline-offset-4 px-3.5 text-lg",
+        "bg-transparent hover:bg-transparent border-transparent hover:underline hover:decoration-2 hover:underline-offset-4 px-3.5 text-lg text-foreground dark:text-foreground",
         isActive && "underline decoration-2 underline-offset-4"
       )}
     >
@@ -61,7 +61,7 @@ export const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="h-20 flex border-b justify-between font-medium bg-white">
+    <nav className="h-20 flex border-b-2 border-b-main-foreground justify-between font-medium bg-secondary-background dark:bg-secondary-background">
       <Link href="/" className="pl-6 flex items-center">
         <div className="relative w-10 h-10">
           <Image src="/logo.png" alt="logo" fill />
@@ -81,7 +81,11 @@ export const Navbar = () => {
       </div>
       <div className="flex">
         <div className="flex px-6 py-4 gap-2">
-          <SidebarTrigger className="px-2 flex lg:hidden" variant="default" size="icon" />
+          <SidebarTrigger
+            className="px-2 flex lg:hidden"
+            variant="default"
+            size="icon"
+          />
           <ThemeToggle />
         </div>
       </div>
