@@ -23,7 +23,7 @@ export const Members: CollectionConfig = {
       name: "division",
       type: "select",
       required: true,
-      options: ["BPH", "MedDok", "Humas", "Litbang", "Advokasi"],
+      options: ["BPH", "Medkom", "Humas", "Litbang", "Advokasi"],
     },
     {
       name: "position",
@@ -50,5 +50,5 @@ export const Members: CollectionConfig = {
       type: "textarea",
       required: true,
     },
-  ],
+  ], 
 };

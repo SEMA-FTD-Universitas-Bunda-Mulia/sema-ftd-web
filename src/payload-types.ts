@@ -175,7 +175,7 @@ export interface Member {
    * Format: YYYY
    */
   year: string;
-  division: 'BPH' | 'MedDok' | 'Humas' | 'Litbang' | 'Advokasi';
+  division: 'BPH' | 'Medkom' | 'Humas' | 'Litbang' | 'Advokasi';
   position: 'Ketua' | 'Wakil Ketua' | 'Sekretaris' | 'Bendahara' | 'Koordinator' | 'Wakil Koordinator' | 'Anggota';
   image: string | Media;
   description: string;

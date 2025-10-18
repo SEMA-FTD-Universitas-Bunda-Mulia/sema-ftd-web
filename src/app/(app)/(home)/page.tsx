@@ -4,11 +4,11 @@ export default function Home() {
   return (
     <div className="px-4 lg:px-20 py-20 flex flex-col gap-4">
       <div className="flex flex-col lg:flex-row lg:items-center gap-y-2 lg:gap-y-0 justify-between">
-        <p className="text-8xl font-extrabold">
+        <h1 className="text-6xl lg:text-8xl font-extrabold">
           Welcome,
           <br />
           <span className="text-main">Signtechers</span>
-        </p>
+        </h1>
         <div>
           <Image src="/cat.gif" alt="logo" width={100} height={100} />
         </div>
