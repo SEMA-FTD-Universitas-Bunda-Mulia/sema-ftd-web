@@ -1,7 +1,8 @@
-import type {  Where } from "payload";
+import type { Where } from "payload";
 import z from "zod";
 
 import { baseProcedure, createTRPCRouter } from "@/trpc/init";
+import { Media } from "@/payload-types";
 
 export const membersRouter = createTRPCRouter({
   // getOne: baseProcedure
@@ -121,10 +122,16 @@ export const membersRouter = createTRPCRouter({
         collection: "members",
         depth: 2, // populate image
         where,
+        pagination: false,
+        limit: 100,
       });
 
       return {
-        docs: data.docs,
+        ...data,
+        docs: data.docs.map((doc) => ({
+          ...doc,
+          image: doc.image as Media | null,
+        })),
         totalDocs: data.totalDocs,
       };
     }),
