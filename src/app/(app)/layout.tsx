@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TRPCReactProvider } from "@/trpc/client";
 import { Toaster } from "sonner";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 
 const dmSans = DM_Sans({ subsets: ["latin"] });
 
@@ -26,10 +27,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <NuqsAdapter>
           <TRPCReactProvider>
             {children}
             <Toaster richColors />
           </TRPCReactProvider>
+          </NuqsAdapter>
         </ThemeProvider>
       </body>
     </html>

@@ -1,9 +1,7 @@
 "use client";
 
 import { CheckIcon, ChevronsUpDown } from "lucide-react";
-
 import * as React from "react";
-
 import { Button } from "@/components/ui/button";
 import {
   Command,
@@ -18,39 +16,28 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-
 import { cn } from "@/lib/utils";
+import { useMembersFilters } from "@/modules/members/hooks/use-members-filters";
 
-const years = [
-  {
-    value: "2025",
-    label: "2025",
-  },
-  {
-    value: "2024",
-    label: "2024",
-  },
-  {
-    value: "2023",
-    label: "2023",
-  },
-  {
-    value: "2022",
-    label: "2022",
-  },
-  {
-    value: "2021",
-    label: "2021",
-  },
-  {
-    value: "2020",
-    label: "2020",
-  },
-];
+const getCurrentYearData = () => {
+  const currentYear = new Date().getFullYear();
+  const startYear = 2025;
+  const endYear = currentYear+10;
+
+  const years = [];
+  for (let year = startYear; year <= endYear; year++) {
+    years.push({
+      value: String(year),
+      label: String(year),
+    });
+  }
+
+  return years;
+};
 
 export default function YearSelector() {
   const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState(years[0].value);
+  const [filters, setFilters] = useMembersFilters();
 
   return (
     <div className="pt-7 h-full">
@@ -62,8 +49,8 @@ export default function YearSelector() {
             aria-expanded={open}
             className="w-full justify-between md:max-w-[200px]"
           >
-            {value
-              ? years.find((year) => year.value === value)?.label
+            {filters.year
+              ? getCurrentYearData().find((year) => year.value === filters.year)?.label
               : "Select year..."}
             <ChevronsUpDown />
           </Button>
@@ -74,20 +61,20 @@ export default function YearSelector() {
             <CommandList className="p-1">
               <CommandEmpty>No year found.</CommandEmpty>
               <CommandGroup>
-                {years.map((year) => (
+                {getCurrentYearData().map((year) => (
                   <CommandItem
                     key={year.value}
                     value={year.value}
                     onSelect={(currentValue) => {
-                      setValue(currentValue === value ? "" : currentValue);
                       setOpen(false);
+                      setFilters({ year: currentValue });
                     }}
                   >
                     {year.label}
                     <CheckIcon
                       className={cn(
                         "ml-auto",
-                        value === year.value ? "opacity-100" : "opacity-0"
+                        filters.year === year.value ? "opacity-100" : "opacity-0"
                       )}
                     />
                   </CommandItem>
