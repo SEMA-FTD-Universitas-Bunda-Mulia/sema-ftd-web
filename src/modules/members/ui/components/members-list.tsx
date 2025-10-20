@@ -5,6 +5,8 @@ import { useTRPC } from "@/trpc/client";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { useMembersFilters } from "../../hooks/use-members-filters";
 import ImageCard from "@/components/ui/image-card";
+import { Skeleton } from "@/components/ui/skeleton";
+import { cn } from "@/lib/utils";
 
 export const MembersList = () => {
   const [filters] = useMembersFilters();
@@ -13,6 +15,12 @@ export const MembersList = () => {
     trpc.members.getMany.queryOptions({ year: filters.year })
   );
 
+  if (data.totalDocs === 0) {
+    return <div className="w-full h-full flex items-center justify-center py-10" >
+      No members available
+    </div>;
+  }
+  
   return (
     <div className="w-full">
       <TabsContent
@@ -82,6 +90,11 @@ export const MembersList = () => {
                 (member.position === "Koordinator" ||
                   member.position === "Wakil Koordinator")
             )
+            .sort((a, b) => {
+              if (a.position === "Koordinator") return -1;
+              if (b.position === "Koordinator") return 1;
+              return 0;
+            })
             .map((member) => (
               <ImageCard
                 key={member.id}
@@ -105,6 +118,79 @@ export const MembersList = () => {
                 description={`${member.position} Media Komunikasi Sema FTD ${member.year}`}
               />
             ))}
+        </div>
+      </TabsContent>
+    </div>
+  );
+};
+
+const ImageCardSkeleton = () => (
+  <figure
+    className={cn(
+      "w-[200px] md:w-[250px] overflow-hidden rounded-base border-2 border-border bg-main font-base shadow-shadow"
+    )}
+  >
+    {/* Image skeleton */}
+    <div className="w-full aspect-square">
+      <Skeleton className="w-full h-full rounded-none" />
+    </div>
+
+    {/* Caption skeleton */}
+    <div className="border-t-2 border-border p-4">
+      <Skeleton className="h-5 md:h-6 w-3/4" />
+    </div>
+
+    {/* Description skeleton */}
+    <div className="border-t-2 border-border p-4">
+      <Skeleton className="h-4 md:h-5 w-full mb-2" />
+      <Skeleton className="h-4 md:h-5 w-2/3" />
+    </div>
+  </figure>
+);
+
+export const MembersListSkeleton = () => {
+  return (
+    <div className="w-full">
+      <TabsContent
+        className="w-full h-full flex flex-col items-center justify-center gap-4"
+        value="bph"
+      >
+        {/* Ketua - 1 column */}
+        <div className="grid grid-cols-1 gap-4 pt-10">
+          <ImageCardSkeleton />
+        </div>
+
+        {/* Wakil Ketua - 2 columns */}
+        <div className="grid grid-cols-2 gap-4 pt-10">
+          <ImageCardSkeleton />
+          <ImageCardSkeleton />
+        </div>
+
+        {/* Bendahara & Sekretaris - 4 columns */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-10">
+          <ImageCardSkeleton />
+          <ImageCardSkeleton />
+          <ImageCardSkeleton />
+          <ImageCardSkeleton />
+        </div>
+      </TabsContent>
+
+      <TabsContent
+        className="w-full flex flex-col items-center justify-center gap-4"
+        value="medkom"
+      >
+        {/* Koordinator & Wakil - 2 columns */}
+        <div className="grid grid-cols-2 gap-4 pt-10">
+          <ImageCardSkeleton />
+          <ImageCardSkeleton />
+        </div>
+
+        {/* Anggota - 4 columns */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-10">
+          <ImageCardSkeleton />
+          <ImageCardSkeleton />
+          <ImageCardSkeleton />
+          <ImageCardSkeleton />
         </div>
       </TabsContent>
     </div>

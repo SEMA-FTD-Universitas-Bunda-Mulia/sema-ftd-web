@@ -1,7 +1,7 @@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import Image from "next/image";
 
-import { MembersList } from "../components/members-list";
+import { MembersList, MembersListSkeleton } from "../components/members-list";
 import { Suspense } from "react";
 import YearSelector from "@/modules/about/ui/components/year-selector";
 
@@ -88,7 +88,7 @@ export const MemberListView = ({}) => {
               <TabsTrigger value="medkom">Medkom</TabsTrigger>
               <TabsTrigger value="advokasi">Advokasi</TabsTrigger>
             </TabsList>
-            <Suspense>
+            <Suspense fallback={<MembersListSkeleton />}>
               <MembersList />
             </Suspense>
           </Tabs>
