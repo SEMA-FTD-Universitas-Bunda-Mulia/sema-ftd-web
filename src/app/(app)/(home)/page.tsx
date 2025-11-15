@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
           <span className="text-main">Signtechers</span>
         </h1>
         <div>
-          <Image src="/cat.gif" alt="logo" width={100} height={100} />
+          {/* <Image src="/cat.gif" alt="logo" width={100} height={100} /> */}
         </div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-6 xl:grid-cols-8 gap-y-6 gap-x-12">
