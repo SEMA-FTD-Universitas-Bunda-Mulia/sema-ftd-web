@@ -47,9 +47,9 @@ export const activitiesRouter = createTRPCRouter({
       }
 
       if (input.sort === "latest" || !input.sort) {
-        sort = "-createdAt";
+        sort = "-date";
       } else if (input.sort === "oldest") {
-        sort = "createdAt";
+        sort = "date";
       }
 
       const data = await ctx.db.find({

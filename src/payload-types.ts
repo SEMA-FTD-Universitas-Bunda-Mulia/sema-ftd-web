@@ -162,7 +162,31 @@ export interface Media {
 export interface Blog {
   id: string;
   title: string;
-  body: string;
+  date: string;
+  description: string;
+  link: string;
+  thumbnail: string | Media;
+  gallery?:
+    | {
+        image?: (string | null) | Media;
+        id?: string | null;
+      }[]
+    | null;
+  content: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
   updatedAt: string;
   createdAt: string;
 }
@@ -327,7 +351,17 @@ export interface MediaSelect<T extends boolean = true> {
  */
 export interface BlogsSelect<T extends boolean = true> {
   title?: T;
-  body?: T;
+  date?: T;
+  description?: T;
+  link?: T;
+  thumbnail?: T;
+  gallery?:
+    | T
+    | {
+        image?: T;
+        id?: T;
+      };
+  content?: T;
   updatedAt?: T;
   createdAt?: T;
 }

@@ -6,15 +6,9 @@ import { useActivitiesFilters } from "../../hooks/use-activity-filters";
 import { DEFAULT_LIMIT } from "@/constants";
 import { Button } from "@/components/ui/button";
 import { InboxIcon } from "lucide-react";
-import ActivityCard from "@/components/ui/activity-card";
+import ActivityCard from "@/modules/activities/ui/components/activity-card";
 
-interface Props {
-  category?: string;
-  tenantSlug?: string;
-  narrowView?: boolean;
-}
-
-export const ActivityList = ({}: Props) => {
+export const ActivityList = () => {
   const [filters] = useActivitiesFilters();
   const trpc = useTRPC();
 
@@ -64,9 +58,8 @@ export const ActivityList = ({}: Props) => {
   );
 };
 
-export const ProductListSkeleton = () => {
+export const ActivityListSkeleton = () => {
   return (
-    <div className="w-full overflow-hidden rounded-base border-2 border-border font-base flex mb-2 bg-amber-300 animate-pulse h-[200px]">
-    </div>
+    <div className="w-full overflow-hidden rounded-base border-2 border-border font-base flex mb-2 bg-amber-300 animate-pulse h-[200px]"></div>
   );
-}
+};
