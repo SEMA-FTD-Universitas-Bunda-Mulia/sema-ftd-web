@@ -42,6 +42,6 @@ export default function BlogCard({ data }: Props) {
 
 export const BlogCardSkeleton = () => {
   return (
-    <div className="w-full overflow-hidden rounded-base border-2 border-border font-base flex mb-2 bg-amber-300 animate-pulse h-[100px]"></div>
+    <div className="w-[350px] overflow-hidden rounded-base border-2 border-border font-base flex mb-2 bg-amber-300 animate-pulse shadow-shadow h-[150px]"></div>
   );
 };

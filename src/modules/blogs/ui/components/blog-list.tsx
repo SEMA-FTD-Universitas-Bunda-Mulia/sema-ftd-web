@@ -92,7 +92,7 @@ export const BlogListSkeleton = () => {
     <div className="flex flex-col gap-12">
       <div className="flex flex-col gap-6">
         {/* Skeleton year header */}
-        <div className="h-16 w-32 bg-gray-200 animate-pulse rounded"></div>
+        <div className="h-11 w-28 bg-gray-200 animate-pulse rounded"></div>
 
         {/* Skeleton grid */}
         <div className="grid gap-6 grid-cols-1 md:grid-cols-2">

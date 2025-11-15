@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 
-import { BlogList } from "../components/blog-list";
+import { BlogList, BlogListSkeleton } from "../components/blog-list";
 import { BlogsSort } from "../components/blog-sort";
 
 export const BlogListView = () => {
@@ -9,7 +9,7 @@ export const BlogListView = () => {
       <div className="my-10">
         <BlogsSort/>
         <div>
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<BlogListSkeleton/>}>
             <BlogList />
           </Suspense>
         </div>
