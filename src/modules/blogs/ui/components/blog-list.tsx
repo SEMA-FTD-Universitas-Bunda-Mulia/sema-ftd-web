@@ -2,7 +2,7 @@
 
 import { useTRPC } from "@/trpc/client";
 import { useSuspenseInfiniteQuery } from "@tanstack/react-query";
-import { useBlogsFilters } from "../../hooks/use-activity-filters";
+import { useBlogsFilters } from "../../hooks/use-blog-filters";
 import { DEFAULT_LIMIT } from "@/constants";
 import { Button } from "@/components/ui/button";
 import { InboxIcon } from "lucide-react";

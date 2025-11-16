@@ -23,6 +23,7 @@ export const Activities: CollectionConfig = {
       type: "text",
       required: true,
     },
+    { name: "tags", type: "relationship", relationTo: "tags", required: true },
     {
       name: "link",
       type: "text",

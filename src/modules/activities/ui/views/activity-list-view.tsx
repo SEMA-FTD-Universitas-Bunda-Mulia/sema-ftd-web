@@ -8,6 +8,7 @@ import {
 import { Suspense } from "react";
 import { ActivitiesSort } from "../components/activity-sort";
 import { ActivityListUpcoming } from "../components/activity-list-upcoming";
+import { ActivityFilters } from "../components/activity-filters";
 
 export const ActivityListView = () => {
   return (
@@ -21,6 +22,9 @@ export const ActivityListView = () => {
           <div className="flex flex-col mt-5 md:mt-0">
             <div className="text-justify leading-6">
               <ActivitiesSort />
+            </div>
+            <div className="mt-5">
+              <ActivityFilters />
             </div>
           </div>
         </div>

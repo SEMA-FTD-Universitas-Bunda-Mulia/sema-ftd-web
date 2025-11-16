@@ -30,6 +30,7 @@ export const activitiesRouter = createTRPCRouter({
         cursor: z.number().default(1),
         limit: z.number().default(DEFAULT_LIMIT),
         sort: z.enum(sortValues).default("latest"),
+        tags: z.array(z.string()).nullable().optional(),
         date: z.string().nullable().optional(),
       })
     )
@@ -50,6 +51,12 @@ export const activitiesRouter = createTRPCRouter({
         sort = "-date";
       } else if (input.sort === "oldest") {
         sort = "date";
+      }
+
+       if (input.tags && input.tags.length > 0) {
+        where["tags.name"] = {
+          in: input.tags,
+        };
       }
 
       const data = await ctx.db.find({

@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { useBlogsFilters } from "../../hooks/use-activity-filters";
+import { useBlogsFilters } from "../../hooks/use-blog-filters";
 
 export const BlogsSort = () => {
   const [filters, setFilters] = useBlogsFilters();
