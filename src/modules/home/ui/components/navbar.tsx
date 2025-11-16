@@ -63,7 +63,7 @@ export const Navbar = () => {
   return (
     <nav className="h-20 flex border-b-2 border-b-main-foreground justify-between font-medium bg-secondary-background dark:bg-secondary-background">
       <Link href="/" className="pl-6 flex items-center">
-        <div className="relative w-10 h-10">
+        <div className="relative w-14 h-14">
           <Image src="/logo.png" alt="logo" fill />
         </div>
       </Link>
