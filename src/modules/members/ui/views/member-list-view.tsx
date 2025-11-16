@@ -54,7 +54,7 @@ export const MemberListView = ({}) => {
               </div>
             </div>
             <div className="lg:col-span-2 xl:col-span-2">
-              <Image src="/cat.gif" alt="logo" width={100} height={100} />
+              {/* <Image src="/cat.gif" alt="logo" width={100} height={100} /> */}
             </div>
           </div>
         </TabsContent>

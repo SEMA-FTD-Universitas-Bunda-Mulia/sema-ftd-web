@@ -120,6 +120,135 @@ export const MembersList = () => {
             ))}
         </div>
       </TabsContent>
+
+      <TabsContent
+        className="w-full flex flex-col items-center justify-center gap-4"
+        value="litbang"
+      >
+        <div className="grid grid-cols-2 gap-4 pt-10">
+          {data.docs
+            .filter(
+              (member) =>
+                member.division === "Litbang" &&
+                (member.position === "Koordinator" ||
+                  member.position === "Wakil Koordinator")
+            )
+            .sort((a, b) => {
+              if (a.position === "Koordinator") return -1;
+              if (b.position === "Koordinator") return 1;
+              return 0;
+            })
+            .map((member) => (
+              <ImageCard
+                key={member.id}
+                imageUrl={member.image?.url || ""}
+                caption={member.name}
+                description={`${member.position} Penelitian & Pengembangan Sema FTD ${member.year}`}
+              />
+            ))}
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-10">
+          {data.docs
+            .filter(
+              (member) =>
+                member.division === "Litbang" && member.position === "Anggota"
+            )
+            .map((member) => (
+              <ImageCard
+                key={member.id}
+                imageUrl={member.image?.url || ""}
+                caption={member.name}
+                description={`${member.position} Penelitian & Pengembangan Sema FTD ${member.year}`}
+              />
+            ))}
+        </div>
+      </TabsContent>
+
+      <TabsContent
+        className="w-full flex flex-col items-center justify-center gap-4"
+        value="humas"
+      >
+        <div className="grid grid-cols-2 gap-4 pt-10">
+          {data.docs
+            .filter(
+              (member) =>
+                member.division === "Humas" &&
+                (member.position === "Koordinator" ||
+                  member.position === "Wakil Koordinator")
+            )
+            .sort((a, b) => {
+              if (a.position === "Koordinator") return -1;
+              if (b.position === "Koordinator") return 1;
+              return 0;
+            })
+            .map((member) => (
+              <ImageCard
+                key={member.id}
+                imageUrl={member.image?.url || ""}
+                caption={member.name}
+                description={`${member.position} Humas Sema FTD ${member.year}`}
+              />
+            ))}
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-10">
+          {data.docs
+            .filter(
+              (member) =>
+                member.division === "Humas" && member.position === "Anggota"
+            )
+            .map((member) => (
+              <ImageCard
+                key={member.id}
+                imageUrl={member.image?.url || ""}
+                caption={member.name}
+                description={`${member.position} Humas Sema FTD ${member.year}`}
+              />
+            ))}
+        </div>
+      </TabsContent>
+
+      <TabsContent
+        className="w-full flex flex-col items-center justify-center gap-4"
+        value="advokasi"
+      >
+        <div className="grid grid-cols-2 gap-4 pt-10">
+          {data.docs
+            .filter(
+              (member) =>
+                member.division === "Advokasi" &&
+                (member.position === "Koordinator" ||
+                  member.position === "Wakil Koordinator")
+            )
+            .sort((a, b) => {
+              if (a.position === "Koordinator") return -1;
+              if (b.position === "Koordinator") return 1;
+              return 0;
+            })
+            .map((member) => (
+              <ImageCard
+                key={member.id}
+                imageUrl={member.image?.url || ""}
+                caption={member.name}
+                description={`${member.position} Advokasi Sema FTD ${member.year}`}
+              />
+            ))}
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-10">
+          {data.docs
+            .filter(
+              (member) =>
+                member.division === "Advokasi" && member.position === "Anggota"
+            )
+            .map((member) => (
+              <ImageCard
+                key={member.id}
+                imageUrl={member.image?.url || ""}
+                caption={member.name}
+                description={`${member.position} Advokasi Sema FTD ${member.year}`}
+              />
+            ))}
+        </div>
+      </TabsContent>
     </div>
   );
 };
