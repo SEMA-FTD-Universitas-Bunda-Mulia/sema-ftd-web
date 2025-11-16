@@ -1,5 +1,4 @@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import Image from "next/image";
 
 import { MembersList, MembersListSkeleton } from "../components/members-list";
 import { Suspense } from "react";
