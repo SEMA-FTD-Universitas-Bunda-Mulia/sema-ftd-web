@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className={`${dmSans.className}`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
