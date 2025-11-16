@@ -48,7 +48,7 @@ export const Footer = () => {
           <p>
             Made With ❤️ by{" "}
             <a
-              className="text-sm hover:underline hover:underline-offset-2"
+              className="hover:underline hover:underline-offset-2"
               href="https://github.com/ChristopherHaris"
               target="_blank"
             >
