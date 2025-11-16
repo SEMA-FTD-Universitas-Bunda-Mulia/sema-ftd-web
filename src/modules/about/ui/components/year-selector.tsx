@@ -22,9 +22,9 @@ import { useMembersFilters } from "@/modules/members/hooks/use-members-filters";
 const getCurrentYearData = () => {
   const currentYear = new Date().getFullYear();
   const startYear = 2025;
-  const endYear = currentYear+10;
+  const endYear = currentYear;
 
-  const years = [];
+  const years: { value: string; label: string }[] = [];
   for (let year = startYear; year <= endYear; year++) {
     years.push({
       value: String(year),
@@ -50,7 +50,8 @@ export default function YearSelector() {
             className="w-full justify-between md:max-w-[200px]"
           >
             {filters.year
-              ? getCurrentYearData().find((year) => year.value === filters.year)?.label
+              ? getCurrentYearData().find((year) => year.value === filters.year)
+                  ?.label
               : "Select year..."}
             <ChevronsUpDown />
           </Button>
@@ -74,7 +75,9 @@ export default function YearSelector() {
                     <CheckIcon
                       className={cn(
                         "ml-auto",
-                        filters.year === year.value ? "opacity-100" : "opacity-0"
+                        filters.year === year.value
+                          ? "opacity-100"
+                          : "opacity-0"
                       )}
                     />
                   </CommandItem>
