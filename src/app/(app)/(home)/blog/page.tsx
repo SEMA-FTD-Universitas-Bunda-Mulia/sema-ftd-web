@@ -5,6 +5,11 @@ import { getQueryClient, trpc } from "@/trpc/server";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { BlogListView } from "@/modules/blogs/ui/views/blog-list-view";
 
+export const metadata = {
+  title: "Blog Sema FTD",
+  description: "Blog Sema FTD",
+};
+
 interface Props {
   searchParams: Promise<SearchParams>;
 }

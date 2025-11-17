@@ -3,6 +3,11 @@ import { LucideArrowRight, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Contact Sema FTD",
+  description: "Contact Sema FTD",
+};
+
 const Page = () => {
   return (
     <div className="px-4 lg:px-20 py-20 flex flex-col gap-4">

@@ -27,8 +27,8 @@ const ActivityFilter = ({
         onClick={() => setIsOpen((current) => !current)}
         className="flex items-center justify-between cursor-pointer"
       >
-        <p className="font-medium">{title}</p>
-        <Icon className="size-5" />
+        <p className="font-medium text-black">{title}</p>
+        <Icon className="size-5 text-black" />
       </div>
       {isOpen && children}
     </div>
@@ -65,11 +65,11 @@ export const ActivityFilters = () => {
   return (
     <div className="border-2 shadow-shadow rounded-md bg-white">
       <div className="p-4 border-b flex items-center justify-between">
-        <p className="font-medium">Filters</p>
+        <p className="font-medium text-black">Filters</p>
         {hasAnyFilters && (
           <button
             onClick={onClear}
-            className="underline text-sm cursor-pointer"
+            className="underline text-sm cursor-pointer text-black"
           >
             Clear
           </button>

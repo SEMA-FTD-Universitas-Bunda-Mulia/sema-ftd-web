@@ -5,8 +5,8 @@ import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { SearchParams } from "nuqs/server";
 
 export const metadata = {
-  title: "About",
-  description: "About",
+  title: "About Sema FTD",
+  description: "About Sema FTD",
 };
 
 interface Props {

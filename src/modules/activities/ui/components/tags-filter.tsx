@@ -43,10 +43,10 @@ export const TagsFilter = ({ value, onChange }: TagsFilterProps) => {
           page.docs.map((tag) => (
             <div
               key={tag.id}
-              className="flex items-center justify-between cursor-pointer"
+              className="flex items-center justify-between cursor-pointer text-black"
               onClick={() => onClick(tag.name)}
             >
-              <p className="font-medium">{tag.name}</p>
+              <p className="font-medium text-black">{tag.name}</p>
               <Checkbox checked={value?.includes(tag.name)} onCheckedChange={() => onClick(tag.name)} />
             </div>
           ))

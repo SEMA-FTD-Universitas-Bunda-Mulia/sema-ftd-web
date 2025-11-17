@@ -18,39 +18,51 @@ export const MemberListView = ({}) => {
           </div>
           <div className="flex flex-col">
             <div className="text-justify leading-6">
-              Incididunt et laborum non consequat qui est anim do qui amet sit
-              excepteur eu do. Aute sit Lorem exercitation minim deserunt aliqua
-              cupidatat nisi. Ex culpa in nulla commodo aliquip consequat.
-              Cillum ex Lorem Lorem nisi dolor anim amet laboris. Pariatur
-              excepteur cupidatat duis consequat sunt excepteur Lorem ex labore
-              tempor do tempor. Sit eiusmod officia cupidatat aliquip occaecat
-              dolore nulla excepteur est qui qui nisi. Id id id non officia sit
-              duis excepteur minim qui sit magna exercitation. In labore labore
-              do anim sint nisi esse ex consequat eiusmod eiusmod. Aliqua et
-              pariatur incididunt adipisicing enim laboris non ullamco aliqua
-              esse labore laborum.
+              The Faculty of Technology and Design Student Senate (
+              <strong>
+                SEMA <span className="text-main">FTD</span>
+              </strong>
+              ) is the driving force of student life within our faculty. We are
+              here to represent the voice of <strong>#Signtechers</strong>,
+              bridge communication between students and faculty leadership, and
+              create an ecosystem that supports Students. Through various work
+              programs, we are committed to fostering leadership, soft skills,
+              and professional networks, in line with our vision to make a
+              positive impact on the UBM community and beyond.
             </div>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-6 xl:grid-cols-8 gap-y-6 gap-x-12 py-5">
-            <div className="lg:col-span-3 xl:col-span-5">
-              <div className="flex flex-col gap-6">
-                <div className="flex flex-col gap-4">
-                  <h1 className="text-4xl font-extrabold">Our Vision</h1>
-                  <p>
-                    Incididunt et laborum non consequat qui est anim do qui amet
-                    sit excepteur eu do. Aute sit Lorem exercitation minim
-                    deserunt aliqua cupidatat nisi.
-                  </p>
-                </div>
-                <div className="flex flex-col gap-4">
-                  <h1 className="text-4xl font-extrabold">Our Mission</h1>
-                  <p>
-                    Incididunt et laborum non consequat qui est anim do qui amet
-                    sit excepteur eu do. Aute sit Lorem exercitation minim
-                    deserunt aliqua cupidatat nisi.
-                  </p>
-                </div>
-              </div>
+
+          <div className="flex flex-row gap-6 my-20">
+            <div className="flex flex-col gap-4">
+              <h1 className="text-4xl font-extrabold">Our Vision</h1>
+              <p>
+                Becoming a leading faculty at Bunda Mulia University that is
+                active and professionally competitive through innovative work,
+                as well as the development of soft skills, professional
+                networks, and leadership that creates a positive impact.
+              </p>
+            </div>
+            <div className="flex flex-col gap-4">
+              <h1 className="text-4xl font-extrabold">Our Mission</h1>
+              <ul className="list-decimal ml-5">
+                <li>
+                  Fostering leadership and interpersonal skills among students
+                  to support professional readiness and self-development in the
+                  future.
+                </li>
+                <li className="mt-2">
+                  Disseminating information regarding academic and non-academic
+                  activities for students of the Faculty of Technology and
+                  Design, ensuring students are always updated with the latest
+                  information.
+                </li>
+                <li className="mt-2">
+                  Building collaboration among UBM student organizations by
+                  initiating sports and arts festivals (porseni), and
+                  non-academic competitions as a platform for developing student
+                  potential.
+                </li>
+              </ul>
             </div>
             <div className="lg:col-span-2 xl:col-span-2">
               {/* <Image src="/cat.gif" alt="logo" width={100} height={100} /> */}
@@ -66,13 +78,12 @@ export const MemberListView = ({}) => {
           <div className="flex flex-col">
             {/* pb-80 */}
             <div className="text-justify leading-6">
-              Meet the people behind Sema FTD, Voluptate reprehenderit qui
-              exercitation sint veniam fugiat ullamco commodo est in non ut
-              mollit. Elit officia velit eiusmod occaecat commodo. Ipsum aliquip
-              non enim voluptate sunt do tempor proident. Voluptate
-              reprehenderit qui exercitation sint veniam fugiat ullamco commodo
-              est in non ut mollit. Elit officia velit eiusmod occaecat commodo.
-              Ipsum aliquip non enim voluptate sunt do tempor proident.
+              Meet the people behind Sema FTD. We are a diverse, dedicated, and
+              passionate team of students from various majors in the Faculty of
+              Technology and Design. From the Executive Board to the Public
+              Relations, R&D, Media & Communication, and Advocacy divisions. We
+              believe in the power of collaboration to realize the
+              organization&apos;s vision and mission.
             </div>
           </div>
           {/* <div className="flex w-full justify-center pb-10">

@@ -25,8 +25,8 @@ export const BlogList = () => {
   if (data.pages?.[0]?.docs.length === 0) {
     return (
       <div className="border border-black border-dashed flex items-center justify-center p-8 flex-col gap-y-4 bg-white w-full rounded-lg py-10">
-        <InboxIcon />
-        <p className="text-base font-medium">No blogs found</p>
+        <InboxIcon className="text-black"/>
+        <p className="text-base font-medium text-black">No blogs found</p>
       </div>
     );
   }

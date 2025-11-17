@@ -1,5 +1,4 @@
-import { Mail } from "lucide-react";
-import Image from "next/image";
+import { Instagram, Mail } from "lucide-react";
 import Link from "next/link";
 
 export const Footer = () => {
@@ -13,14 +12,15 @@ export const Footer = () => {
           <Link
             href="https://www.instagram.com/ubm_semaftd/"
             target="_blank"
-            className="flex gap-2"
+            className="flex gap-2 items-center"
           >
-            <Image
+            {/* <Image
               src="/instagram.svg"
               alt="instagram"
               width={16}
               height={16}
-            />
+            /> */}
+            <Instagram className="h-4 w-4" />
             <p className="text-sm hover:underline hover:underline-offset-2">
               @ubm_semaftd
             </p>

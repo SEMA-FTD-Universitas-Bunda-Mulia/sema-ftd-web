@@ -59,7 +59,39 @@ export const MembersList = () => {
             ))}
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-10">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 pt-10">
+          {data.docs
+            .filter(
+              (member) =>
+                member.division === "BPH" && member.position === "Sekretaris"
+            )
+            .map((member) => (
+              <ImageCard
+                key={member.id}
+                imageUrl={member.image?.url || ""}
+                caption={member.name}
+                description={`${member.position} Sema FTD ${member.year}`}
+              />
+            ))}
+        </div>
+
+        <div className="grid grid-cols-2 gap-4 pt-10">
+          {data.docs
+            .filter(
+              (member) =>
+                member.division === "BPH" && member.position === "Bendahara"
+            )
+            .map((member) => (
+              <ImageCard
+                key={member.id}
+                imageUrl={member.image?.url || ""}
+                caption={member.name}
+                description={`${member.position} Sema FTD ${member.year}`}
+              />
+            ))}
+        </div>
+
+        {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-10">
           {data.docs
             .filter(
               (member) =>
@@ -75,7 +107,7 @@ export const MembersList = () => {
                 description={`${member.position} Sema FTD ${member.year}`}
               />
             ))}
-        </div>
+        </div> */}
       </TabsContent>
 
       <TabsContent

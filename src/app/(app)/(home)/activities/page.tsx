@@ -6,6 +6,11 @@ import { getQueryClient, trpc } from "@/trpc/server";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 // import { CalendarComponents } from "@/modules/activities/ui/components/calender";
 
+export const metadata = {
+  title: "Activities Sema FTD",
+  description: "Activities Sema FTD",
+};
+
 interface Props {
   searchParams: Promise<SearchParams>;
 }

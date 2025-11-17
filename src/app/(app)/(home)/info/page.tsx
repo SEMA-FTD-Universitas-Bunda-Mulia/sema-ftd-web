@@ -9,6 +9,11 @@ import {
 import { ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Info Sema FTD",
+  description: "Info Sema FTD",
+};
+
 const data = [
   {
     title: "Internal Event",
