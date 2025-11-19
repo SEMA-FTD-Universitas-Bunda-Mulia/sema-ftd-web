@@ -40,6 +40,7 @@
         "@trpc/client": "11.4.1",
         "@trpc/server": "11.4.1",
         "@trpc/tanstack-react-query": "11.4.1",
+        "@vercel/speed-insights": "^1.2.0",
         "class-variance-authority": "^0.7.1",
         "client-only": "0.0.1",
         "clsx": "^2.1.1",
@@ -865,6 +866,8 @@
     "@uploadthing/mime-types": ["@uploadthing/mime-types@0.3.2", "", {}, "sha512-WP/K75S/649lM0GUcd9jq4RjeTIc/0bO2UmLx4+usTSNy/x0K8gV0JdLWeUUbmTQtJoHd4ZTSvAdG7ZQgcmXvA=="],
 
     "@uploadthing/shared": ["@uploadthing/shared@7.1.1", "", { "dependencies": { "@uploadthing/mime-types": "0.3.2", "effect": "3.10.3", "sqids": "^0.3.0" } }, "sha512-Nem3jZ6G9AJEBzzDVvwSKV/wLdpADz8LDg+woo9diJTHj1FOjWNzCwb8wMxpEFLM88TWv5Tq8Z1mQepNmC5WIQ=="],
+
+    "@vercel/speed-insights": ["@vercel/speed-insights@1.2.0", "", { "peerDependencies": { "@sveltejs/kit": "^1 || ^2", "next": ">= 13", "react": "^18 || ^19 || ^19.0.0-rc", "svelte": ">= 4", "vue": "^3", "vue-router": "^4" }, "optionalPeers": ["@sveltejs/kit", "next", "react", "svelte", "vue", "vue-router"] }, "sha512-y9GVzrUJ2xmgtQlzFP2KhVRoCglwfRQgjyfY607aU0hh0Un6d0OUyrJkjuAlsV18qR4zfoFPs/BiIj9YDS6Wzw=="],
 
     "acorn": ["acorn@8.12.1", "", { "bin": { "acorn": "bin/acorn" } }, "sha512-tcpGyI9zbizT9JbV6oYE477V6mTlXvvi0T0G3SNIYE2apm/G5huBa1+K89VGeovbg+jycCrfhl3ADxErOuO6Jg=="],
 
