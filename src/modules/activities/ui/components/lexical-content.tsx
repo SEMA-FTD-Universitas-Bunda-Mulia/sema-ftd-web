@@ -18,7 +18,9 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({
   paragraph: ({ nodesToJSX, ...props }) => {
     const children = nodesToJSX({ nodes: props.node.children, ...props });
     return (
-      <p className="mb-4 text-base leading-relaxed text-gray-700">{children}</p>
+      <p className="mb-4 text-base leading-relaxed text-gray-700 dark:text-gray-300">
+        {children}
+      </p>
     );
   },
 
@@ -27,12 +29,12 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({
     const children = nodesToJSX({ nodes: props.node.children, ...props });
     const Tag = `h${props.node.tag}` as keyof JSX.IntrinsicElements;
     const headingStyles = {
-      h1: "text-4xl font-bold mb-6 mt-8 text-gray-900",
-      h2: "text-3xl font-bold mb-5 mt-7 text-gray-900",
-      h3: "text-2xl font-semibold mb-4 mt-6 text-gray-900",
-      h4: "text-xl font-semibold mb-3 mt-5 text-gray-800",
-      h5: "text-lg font-semibold mb-2 mt-4 text-gray-800",
-      h6: "text-base font-semibold mb-2 mt-3 text-gray-800",
+      h1: "text-4xl font-bold mb-6 mt-8 text-gray-900 dark:text-gray-100",
+      h2: "text-3xl font-bold mb-5 mt-7 text-gray-900 dark:text-gray-100",
+      h3: "text-2xl font-semibold mb-4 mt-6 text-gray-900 dark:text-gray-100",
+      h4: "text-xl font-semibold mb-3 mt-5 text-gray-800 dark:text-gray-200",
+      h5: "text-lg font-semibold mb-2 mt-4 text-gray-800 dark:text-gray-200",
+      h6: "text-base font-semibold mb-2 mt-3 text-gray-800 dark:text-gray-200",
     };
 
     return (
@@ -58,7 +60,11 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({
 
   listitem: ({ nodesToJSX, ...props }) => {
     const children = nodesToJSX({ nodes: props.node.children, ...props });
-    return <li className="text-base text-gray-700 ml-4">{children}</li>;
+    return (
+      <li className="text-base text-gray-700 dark:text-gray-300 ml-4">
+        {children}
+      </li>
+    );
   },
 
   // Links
@@ -69,7 +75,7 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({
         href={props.node.fields.url}
         target={props.node.fields.newTab ? "_blank" : undefined}
         rel={props.node.fields.newTab ? "noopener noreferrer" : undefined}
-        className="text-blue-600 hover:text-blue-800 underline font-medium"
+        className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline font-medium"
       >
         {children}
       </a>
@@ -80,7 +86,7 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({
   quote: ({ nodesToJSX, ...props }) => {
     const children = nodesToJSX({ nodes: props.node.children, ...props });
     return (
-      <blockquote className="border-l-4 border-gray-300 pl-4 py-2 mb-4 italic text-gray-600 bg-gray-50">
+      <blockquote className="border-l-4 border-gray-300 dark:border-gray-600 pl-4 py-2 mb-4 italic text-gray-600 dark:text-gray-400 bg-gray-50 dark:bg-gray-800">
         {children}
       </blockquote>
     );
@@ -90,7 +96,7 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({
   code: ({ nodesToJSX, ...props }) => {
     const children = nodesToJSX({ nodes: props.node.children, ...props });
     return (
-      <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg mb-4 overflow-x-auto">
+      <pre className="bg-gray-900 dark:bg-gray-950 text-gray-100 p-4 rounded-lg mb-4 overflow-x-auto border border-gray-700">
         <code className="text-sm font-mono">{children}</code>
       </pre>
     );
@@ -119,7 +125,7 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({
     if (props.node.format & 16) {
       // Code
       text = (
-        <code className="bg-gray-100 text-red-600 px-1.5 py-0.5 rounded text-sm font-mono">
+        <code className="bg-gray-100 dark:bg-gray-800 text-red-600 dark:text-red-400 px-1.5 py-0.5 rounded text-sm font-mono border border-gray-200 dark:border-gray-700">
           {text}
         </code>
       );
@@ -129,15 +135,19 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({
   },
 
   // Horizontal rule
-  horizontalrule: () => <hr className="my-8 border-t-2 border-gray-200" />,
+  horizontalrule: () => (
+    <hr className="my-8 border-t-2 border-gray-200 dark:border-gray-700" />
+  ),
 });
 
 export const LexicalConverter: React.FC<{
   data: SerializedEditorState;
 }> = ({ data }) => {
   return (
-    <div className="prose prose-lg max-w-none">
+    <div className="prose prose-lg dark:prose-invert max-w-none">
       <RichText converters={jsxConverters} data={data} />
     </div>
   );
 };
+
+export default LexicalConverter;

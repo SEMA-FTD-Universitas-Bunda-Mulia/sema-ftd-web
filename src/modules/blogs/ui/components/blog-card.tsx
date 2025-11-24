@@ -20,8 +20,8 @@ export default function BlogCard({ data }: Props) {
     <Link prefetch href={`/blog/${data.id}`}>
       <Card className="w-full max-w-sm bg-main mx-auto">
         <CardHeader>
-          <CardTitle className="text-xl">{data.title}</CardTitle>
-          <CardDescription>
+          <CardTitle className="text-xl text-main-foreground">{data.title}</CardTitle>
+          <CardDescription className="text-main-foreground">
             {data.description
               ? data.description.length > 100
                 ? `${data.description.substring(0, 100)}...`
@@ -30,7 +30,7 @@ export default function BlogCard({ data }: Props) {
           </CardDescription>
         </CardHeader>
         <CardFooter className="items-start">
-          <div className="flex flex-row gap-2 mt-4 text-start text-sm">
+          <div className="flex flex-row gap-2 mt-4 text-start text-sm text-main-foreground">
             <Calendar className="w-5 h-5" />
             <p>{formatDate(data.date)}</p>
           </div>
