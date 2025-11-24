@@ -26,7 +26,7 @@ export const Footer = () => {
             </p>
           </Link>
           <Link
-            href="mailto:fakultasteknodesign@gmail.com?subject=Inquiry&body=Hey, let's..."
+            href="https://mail.google.com/mail/u/0/#inbox?compose=new"
             target="_blank"
             className="flex gap-2 items-center"
           >
