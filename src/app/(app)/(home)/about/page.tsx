@@ -1,4 +1,4 @@
-import { loadMemberFilters } from "@/modules/members/search-params";
+// import { loadMemberFilters } from "@/modules/members/search-params";
 import { MemberListView } from "@/modules/members/ui/views/member-list-view";
 import { getQueryClient, trpc } from "@/trpc/server";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
@@ -17,11 +17,11 @@ interface Props {
 }
 
 const Page = async ({ searchParams }: Props) => {
-  const filters = await loadMemberFilters(searchParams);
+  // const filters = await loadMemberFilters(searchParams);
   const queryClient = getQueryClient();
   void queryClient.prefetchQuery(
     trpc.members.getMany.queryOptions({
-      year: filters.year,
+      // year: filters.year,
     })
   );
 

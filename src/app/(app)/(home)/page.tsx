@@ -23,7 +23,7 @@ export default function Home() {
       </div>
       <div className="flex flex-col w-full justify-center items-center mt-20 gap-14">
         <h1 className="text-center text-6xl">
-          What is <span className="text-gray-800">Sema </span>
+          What is <span className="text-gray-800 dark:text-white">Sema </span>
           <span className="text-main">FTD</span>?
         </h1>
         <p className="text-lg">
