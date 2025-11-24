@@ -37,7 +37,7 @@ const Page = () => {
         </Button>
         <Button className="justify-between h-14">
           <Link
-            href="https://mail.google.com/mail/u/0/#inbox?compose=new"
+            href="mailto:fakultasteknodesign@gmail.com?subject=Inquiry&body=Hey, let's..."
             target="_blank"
             className="flex flex-row gap-2 mx-2 items-center"
           >
