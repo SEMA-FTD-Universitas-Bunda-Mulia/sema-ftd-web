@@ -149,5 +149,3 @@ export const LexicalConverter: React.FC<{
     </div>
   );
 };
-
-export default LexicalConverter;
