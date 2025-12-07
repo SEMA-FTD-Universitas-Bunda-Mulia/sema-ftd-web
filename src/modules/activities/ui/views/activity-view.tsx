@@ -35,8 +35,46 @@ export const ActivityView = ({ activityId }: Props) => {
         </div>
       </div>
 
+      {data.gallery && data.gallery.length == 1 && (
+        <div className="w-full flex-col items-center gap-4 flex">
+          <Carousel
+            plugins={[
+              Autoplay({
+                delay: 5000,
+              }),
+            ]}
+            className="w-full"
+          >
+            <CarouselContent>
+              {data.gallery.map((item) => (
+                <CarouselItem key={item.id} className="pt-1 md:basis-1/1">
+                  <div className="p-1">
+                    <Card className="md:w-full overflow-hidden">
+                      <CardContent className="p-0 w-full h-full">
+                        {item.image && typeof item.image !== "string" && (
+                          <div className="relative aspect-video w-full h-full">
+                            <Image
+                              src={item.image?.url || ""}
+                              alt={item.image.alt || data.title}
+                              fill
+                              className="object-cover rounded-base"
+                            />
+                          </div>
+                        )}
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </div>
+      )}
+
       {/* Image Carousel */}
-      {data.gallery && data.gallery.length > 0 && (
+      {data.gallery && data.gallery.length > 1 && (
         <div className="w-full flex-col items-center gap-4 flex">
           <Carousel
             plugins={[
@@ -50,10 +88,10 @@ export const ActivityView = ({ activityId }: Props) => {
               {data.gallery.map((item) => (
                 <CarouselItem key={item.id} className="pt-1 md:basis-1/2">
                   <div className="p-1">
-                    <Card className="md:w-[500px]">
-                      <CardContent className="p-0 w-full">
+                    <Card className="md:w-[500px] overflow-hidden">
+                      <CardContent className="p-0 w-full h-full">
                         {item.image && typeof item.image !== "string" && (
-                          <div className="relative aspect-video w-full">
+                          <div className="relative aspect-video w-full h-full">
                             <Image
                               src={item.image?.url || ""}
                               alt={item.image.alt || data.title}

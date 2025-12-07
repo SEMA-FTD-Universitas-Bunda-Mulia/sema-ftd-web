@@ -18,7 +18,7 @@ type Props = {
 export default function BlogCard({ data }: Props) {
   return (
     <Link prefetch href={`/blog/${data.id}`}>
-      <Card className="w-full max-w-sm bg-main mx-auto">
+      <Card className="w-full max-w-sm bg-main mx-auto py-6">
         <CardHeader>
           <CardTitle className="text-xl text-main-foreground">{data.title}</CardTitle>
           <CardDescription className="text-main-foreground">
