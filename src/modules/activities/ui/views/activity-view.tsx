@@ -88,7 +88,7 @@ export const ActivityView = ({ activityId }: Props) => {
               {data.gallery.map((item) => (
                 <CarouselItem key={item.id} className="pt-1 md:basis-1/2">
                   <div className="p-1">
-                    <Card className="md:w-[500px] overflow-hidden">
+                    <Card className="w-[500px] xl:w-[600px] overflow-hidden">
                       <CardContent className="p-0 w-full h-full">
                         {item.image && typeof item.image !== "string" && (
                           <div className="relative aspect-video w-full h-full">
