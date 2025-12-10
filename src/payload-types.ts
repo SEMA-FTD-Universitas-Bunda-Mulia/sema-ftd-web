@@ -221,7 +221,7 @@ export interface Activity {
   title: string;
   date: string;
   description: string;
-  tags: string | Tag;
+  tags: (string | Tag)[];
   link: string;
   thumbnail: string | Media;
   gallery?:

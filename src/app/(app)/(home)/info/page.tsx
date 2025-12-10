@@ -56,7 +56,7 @@ const Page = () => {
                 </CardHeader>
                 <CardFooter className="items-center justify-center">
                   <Link href={item.href}>
-                    <Button variant="neutral">
+                    <Button className="mb-6" variant="neutral">
                       See Details <ArrowRightIcon />
                     </Button>
                   </Link>
