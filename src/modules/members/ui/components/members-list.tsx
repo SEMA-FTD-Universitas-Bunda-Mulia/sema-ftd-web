@@ -288,7 +288,7 @@ export const MembersList = () => {
 const ImageCardSkeleton = () => (
   <figure
     className={cn(
-      "w-[200px] md:w-[250px] overflow-hidden rounded-base border-2 border-border bg-main font-base shadow-shadow"
+      "w-[180px] md:w-[250px] overflow-hidden rounded-base border-2 border-border bg-main font-base shadow-shadow"
     )}
   >
     {/* Image skeleton */}

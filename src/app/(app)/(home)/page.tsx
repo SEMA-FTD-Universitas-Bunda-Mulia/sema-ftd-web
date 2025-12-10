@@ -11,7 +11,7 @@ export const metadata = {
 export default function Home() {
   return (
     <div className="px-6 lg:px-20 py-15 flex flex-col gap-4">
-      <div className="flex flex-col lg:flex-row py-52 lg:py-28 lg:items-center gap-y-2 lg:gap-y-0 justify-between">
+      <div className="flex flex-col lg:flex-row py-60 lg:py-28 lg:items-center gap-y-2 lg:gap-y-0 justify-between">
         <h1 className="text-6xl lg:text-8xl font-extrabold">
           Welcome,
           <br />
@@ -86,7 +86,7 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      <div className="flex flex-col w-full justify-center items-center my-30 gap-14">
+      <div className="flex flex-col w-full justify-center items-center mt-30 mb-10 gap-14">
         <div className="flex flex-col-reverse md:flex-row gap-10">
           <div className="lg:max-w-[60%]">
             <p className="text-base/7 lg:text-lg">
