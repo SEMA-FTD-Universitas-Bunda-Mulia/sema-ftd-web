@@ -3,6 +3,11 @@ import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { getQueryClient, trpc } from "@/trpc/server";
 import { ActivityView } from "@/modules/activities/ui/views/activity-view";
 
+export const metadata = {
+  title: "Activty Sema FTD",
+  description: "Activty Sema FTD",
+};
+
 interface Props {
   params: Promise<{ activityId: string }>;
 }

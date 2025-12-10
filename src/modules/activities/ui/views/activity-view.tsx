@@ -1,5 +1,6 @@
 "use client";
-import { Calendar } from "lucide-react";
+
+import { ArrowUpRight, Calendar } from "lucide-react";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { useTRPC } from "@/trpc/client";
 import { LexicalConverter } from "../components/lexical-content";
@@ -14,12 +15,17 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
+import { InstagramEmbed } from "react-social-media-embed";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 interface Props {
   activityId: string;
 }
 
 export const ActivityView = ({ activityId }: Props) => {
+  const [show, setShow] = useState(false);
   const trpc = useTRPC();
   const { data } = useSuspenseQuery(
     trpc.activities.getOne.queryOptions({ activityId })
@@ -31,7 +37,7 @@ export const ActivityView = ({ activityId }: Props) => {
         <h1 className="text-2xl lg:text-4xl font-bold">{data.title}</h1>
         <div className="flex gap-2 items-center">
           <Calendar className="w-5 h-5" />
-          <p className="text-lg">{formatDate(data.date)}</p>
+          <p className="text-base">{formatDate(data.date)}</p>
         </div>
       </div>
 
@@ -67,8 +73,6 @@ export const ActivityView = ({ activityId }: Props) => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
           </Carousel>
         </div>
       )}
@@ -118,6 +122,24 @@ export const ActivityView = ({ activityId }: Props) => {
           <LexicalConverter data={data.content} />
         ) : (
           <p className="text-muted-foreground italic">No content available</p>
+        )}
+      </div>
+      <div className="flex flex-row justify-between">
+        <div className="flex gap-2">
+          <Button onClick={() => setShow(!show)}>
+            {show ? "Hide" : "Show Post"}
+          </Button>
+          <Link href={data.link} target="_blank">
+            <Button>
+              Open Link
+              <ArrowUpRight />
+            </Button>
+          </Link>
+        </div>
+        {show && data.link && (
+          <div className="ml-auto">
+            <InstagramEmbed url={data.link} width={350} />
+          </div>
         )}
       </div>
     </div>
