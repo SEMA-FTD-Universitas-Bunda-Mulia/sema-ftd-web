@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRightIcon } from "lucide-react";
+import { ArrowDown, ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,23 +10,26 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="px-4 lg:px-20 py-15 flex flex-col gap-4">
-      <div className="flex flex-col lg:flex-row py-28 lg:items-center gap-y-2 lg:gap-y-0 justify-between">
+    <div className="px-6 lg:px-20 py-15 flex flex-col gap-4">
+      <div className="flex flex-col lg:flex-row py-52 lg:py-28 lg:items-center gap-y-2 lg:gap-y-0 justify-between">
         <h1 className="text-6xl lg:text-8xl font-extrabold">
           Welcome,
           <br />
           <span className="text-main">Signtechers</span>
         </h1>
-        <div>
+        <div className="hidden md:block lg:w-[300px]">
           <Image src="/logo.png" alt="logo" width={300} height={300} />
         </div>
       </div>
+      <div className="flex mx-auto">
+        <ArrowDown className="animate-bounce" />
+      </div>
       <div className="flex flex-col w-full justify-center items-center mt-20 gap-14">
-        <h1 className="text-center text-6xl">
+        <h1 className="text-center text-4xl">
           What is <span className="text-gray-800 dark:text-white">Sema </span>
           <span className="text-main">FTD</span>?
         </h1>
-        <p className="text-lg">
+        <p className="text-base/7 lg:text-lg">
           <strong>The Faculty of Technology and Design Student Senate </strong>
           is a student representative institution at the
           <strong> Bunda Mulia University </strong>
@@ -58,12 +61,12 @@ export default function Home() {
         </Link>
       </div>
       <div className="flex flex-col w-full justify-center items-center mt-30 gap-14">
-        <div className="flex flex-row gap-10">
-          <h1 className="text-start text-5xl">
+        <div className="flex flex-col md:flex-row gap-10">
+          <h1 className="text-start text-4xl">
             Check Out Our <span className="text-main">Activities</span>
           </h1>
-          <div className="max-w-[60%]">
-            <p className="text-lg">
+          <div className="lg:max-w-[60%]">
+            <p className="text-base/7 lg:text-lg">
               Explore the various activities of the Faculty of Technology and
               Design Student Senate. This section is the information hub for all
               work programs, seminars, workshops, and competitions we organize.
@@ -84,9 +87,9 @@ export default function Home() {
         </div>
       </div>
       <div className="flex flex-col w-full justify-center items-center my-30 gap-14">
-        <div className="flex flex-row gap-10">
-          <div className="max-w-[60%]">
-            <p className="text-lg">
+        <div className="flex flex-col-reverse md:flex-row gap-10">
+          <div className="lg:max-w-[60%]">
+            <p className="text-base/7 lg:text-lg">
               Welcome to the{" "}
               <strong>
                 SEMA <span className="text-main">FTD</span>
@@ -102,7 +105,7 @@ export default function Home() {
               like.
             </p>
           </div>
-          <h1 className="text-start text-5xl">
+          <h1 className="text-start text-4xl">
             See Our <span className="text-main">Blogs</span>
           </h1>
         </div>

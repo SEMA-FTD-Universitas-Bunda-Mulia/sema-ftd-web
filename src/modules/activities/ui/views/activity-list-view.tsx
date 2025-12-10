@@ -17,7 +17,7 @@ export const ActivityListView = () => {
         {/* <CalendarComponents /> */}
         <div className="w-[40%]">
           <div className="flex flex-col lg:flex-row lg:items-center gap-y-2 lg:gap-y-0 py-5 justify-between">
-            <h1 className="text-6xl font-extrabold">Our Activities</h1>
+            <h1 className="text-4xl lg:text-6xl font-extrabold">Our Activities</h1>
           </div>
           <div className="flex flex-col mt-5 md:mt-0">
             <div className="text-justify leading-6">

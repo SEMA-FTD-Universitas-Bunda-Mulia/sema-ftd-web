@@ -12,7 +12,7 @@ const Page = () => {
   return (
     <div className="px-4 lg:px-20 py-20 flex flex-col gap-4">
       <div className="flex flex-col lg:flex-row lg:items-center gap-y-2 lg:gap-y-0 justify-start">
-        <h1 className="text-2xl lg:text-6xl font-extrabold">
+        <h1 className="text-5xl lg:text-6xl font-extrabold">
           Let&apos;s
           <br />
           <span className="text-main">Connect</span>

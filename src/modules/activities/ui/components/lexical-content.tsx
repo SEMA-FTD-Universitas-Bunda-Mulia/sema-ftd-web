@@ -144,7 +144,7 @@ export const LexicalConverter: React.FC<{
   data: SerializedEditorState;
 }> = ({ data }) => {
   return (
-    <div className="prose prose-lg dark:prose-invert max-w-none">
+    <div className="prose prose-lg dark:prose-invert max-w-none my-10 md:my-0">
       <RichText converters={jsxConverters} data={data} />
     </div>
   );

@@ -1,11 +1,12 @@
-import { Instagram, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export const Footer = () => {
   return (
     <>
       <footer className="flex border-t-2 border-t-main-foreground justify-between font-medium p-5 bg-secondary-background dark:bg-secondary-background">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 text-sm md:text-base">
           <p>Senat Mahasiswa FTD UBM</p>
         </div>
         <div className="flex flex-col items-start gap-2 mx-5">
@@ -14,14 +15,13 @@ export const Footer = () => {
             target="_blank"
             className="flex gap-2 items-center"
           >
-            {/* <Image
+            <Image
               src="/instagram.svg"
               alt="instagram"
               width={16}
               height={16}
-            /> */}
-            <Instagram className="h-4 w-4" />
-            <p className="text-sm hover:underline hover:underline-offset-2">
+            />
+            <p className="text-xs md:text-sm hover:underline hover:underline-offset-2 ">
               @ubm_semaftd
             </p>
           </Link>
@@ -31,7 +31,7 @@ export const Footer = () => {
             className="flex gap-2 items-center"
           >
             <Mail className="h-4 w-4" />
-            <p className="text-sm hover:underline hover:underline-offset-2">
+            <p className="text-xs md:text-sm hover:underline hover:underline-offset-2">
               fakultasteknodesign@gmail.com
             </p>
           </Link>
@@ -44,7 +44,7 @@ export const Footer = () => {
             Universitas Bunda Mulia
           </p>
         </div>
-        <div className="flex flex-col items-start gap-2 mx-5">
+        <div className="flex flex-col items-start gap-2 mx-5 text-xs md:text-sm">
           <p>
             Made With ❤️ by{" "}
             <a

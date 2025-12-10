@@ -17,7 +17,7 @@ export default function ActivityCard({ data, className }: Props) {
           className
         )}
       >
-        <div className="flex w-[100px] md:min-w-[200px]">
+        <div className="flex max-w-[100px] md:min-w-[200px]">
           <Image
             src={data.thumbnail?.url || ""}
             alt="image"
@@ -27,11 +27,13 @@ export default function ActivityCard({ data, className }: Props) {
           />
         </div>
         <div className="mx-4 my-4">
-          <h2 className="text-lg md:text-xl font-semibold">{data.title}</h2>
-          <div className="text-main-foreground border-border text-sm md:text-base font-bold mt-1">
+          <h2 className="text-sm md:text-xl font-semibold line-clamp-1">
+            {data.title}
+          </h2>
+          <div className="text-main-foreground border-border text-xs md:text-base font-bold mt-1">
             {formatDate(data.date)}
           </div>
-          <div className="text-main-foreground border-border text-sm md:text-base mt-2">
+          <div className="text-main-foreground border-border text-xs md:text-base mt-2 line-clamp-2">
             {data.description}
           </div>
         </div>

@@ -26,9 +26,9 @@ export const ActivityView = ({ activityId }: Props) => {
   );
 
   return (
-    <div className="px-4 lg:px-20 py-14 flex flex-col gap-4">
+    <div className="px-6 lg:px-20 py-14 flex flex-col gap-4">
       <div className="flex flex-col lg:flex-col lg:items-start gap-y-5">
-        <h1 className="text-4xl font-bold">{data.title}</h1>
+        <h1 className="text-2xl lg:text-4xl font-bold">{data.title}</h1>
         <div className="flex gap-2 items-center">
           <Calendar className="w-5 h-5" />
           <p className="text-lg">{formatDate(data.date)}</p>
@@ -88,7 +88,7 @@ export const ActivityView = ({ activityId }: Props) => {
               {data.gallery.map((item) => (
                 <CarouselItem key={item.id} className="pt-1 md:basis-1/2">
                   <div className="p-1">
-                    <Card className="w-[500px] xl:w-[600px] overflow-hidden">
+                    <Card className="w-screen/8 xl:w-[600px] overflow-hidden">
                       <CardContent className="p-0 w-full h-full">
                         {item.image && typeof item.image !== "string" && (
                           <div className="relative aspect-video w-full h-full">
@@ -106,8 +106,8 @@ export const ActivityView = ({ activityId }: Props) => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="-bottom-12 left-4 top-auto -translate-y-0 rotate-0" />
+            <CarouselNext className="-bottom-12 right-4 top-auto translate-y-0 rotate-0" />
           </Carousel>
         </div>
       )}

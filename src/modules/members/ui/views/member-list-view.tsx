@@ -14,7 +14,7 @@ export const MemberListView = ({}) => {
         </TabsList>
         <TabsContent className="w-full" value="about">
           <div className="flex flex-col lg:flex-row lg:items-center gap-y-2 lg:gap-y-0 py-5 justify-between">
-            <h1 className="text-6xl font-extrabold">About Us</h1>
+            <h1 className="text-4xl lg:text-6xl font-extrabold">About Us</h1>
           </div>
           <div className="flex flex-col">
             <div className="text-justify leading-6">
@@ -32,7 +32,7 @@ export const MemberListView = ({}) => {
             </div>
           </div>
 
-          <div className="flex flex-row gap-6 my-20">
+          <div className="flex flex-col md:flex-row gap-10 md:gap-6 my-20">
             <div className="flex flex-col gap-4">
               <h1 className="text-4xl font-extrabold">Our Vision</h1>
               <p>
@@ -71,7 +71,7 @@ export const MemberListView = ({}) => {
         </TabsContent>
         <TabsContent className="w-full" value="team">
           <div className="flex flex-col lg:flex-row lg:items-center gap-y-2 lg:gap-y-0 py-5 justify-between">
-            <h1 className="text-6xl font-extrabold">
+            <h1 className="text-4xl lg:text-6xl font-extrabold">
               Meet Our <span className="text-main">Team</span>
             </h1>
           </div>
