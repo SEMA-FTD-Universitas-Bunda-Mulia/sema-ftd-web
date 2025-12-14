@@ -46,7 +46,7 @@ const Page = () => {
             {data.map((item) => (
               <Card
                 key={item.title}
-                className="w-56 h-56 max-w-sm bg-main mx-auto justify-between"
+                className="w-56 h-56 max-w-sm bg-main mx-auto justify-between py-6"
               >
                 <CardHeader>
                   <CardTitle className="text-3xl text-center mt-9">
@@ -56,7 +56,7 @@ const Page = () => {
                 </CardHeader>
                 <CardFooter className="items-center justify-center">
                   <Link href={item.href}>
-                    <Button className="mb-6" variant="neutral">
+                    <Button className="" variant="neutral">
                       See Details <ArrowRightIcon />
                     </Button>
                   </Link>
