@@ -78,7 +78,7 @@ export default async function Image() {
           style={{
             fontSize: 72,
             fontWeight: "bold",
-            color: "#ffffff",
+            color: "#000000",
             lineHeight: 1.2,
             marginBottom: 20,
             letterSpacing: "-2px",
