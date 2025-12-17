@@ -6,6 +6,7 @@ import { TRPCReactProvider } from "@/trpc/client";
 import { Toaster } from "sonner";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { PostHogProvider } from "@/components/posthog-provider";
 
 const dmSans = DM_Sans({ subsets: ["latin"] });
 
@@ -22,20 +23,22 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${dmSans.className}`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <NuqsAdapter>
-            <TRPCReactProvider>
-              <SpeedInsights />
-              {children}
-              <Toaster richColors />
-            </TRPCReactProvider>
-          </NuqsAdapter>
-        </ThemeProvider>
+        <PostHogProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <NuqsAdapter>
+              <TRPCReactProvider>
+                <SpeedInsights />
+                {children}
+                <Toaster richColors />
+              </TRPCReactProvider>
+            </NuqsAdapter>
+          </ThemeProvider>
+        </PostHogProvider>
       </body>
     </html>
   );
