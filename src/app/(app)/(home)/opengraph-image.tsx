@@ -18,6 +18,7 @@ export default async function Image() {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
+        background: "yellow",
         width: "100%",
         height: "100%",
       }}
@@ -31,7 +32,7 @@ export default async function Image() {
         />
       </div>
       <div style={{ width: "70%", textAlign: "center" }}>
-        <h1>Sema FTD</h1>
+        <h1 style={{ color: "white" }}>Sema FTD</h1>
       </div>
     </div>,
     // ImageResponse options
