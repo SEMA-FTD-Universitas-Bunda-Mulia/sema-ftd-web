@@ -55,7 +55,7 @@ export default async function Image() {
           }}
         >
           <img
-            src="logo.png"
+            src="https://97swgy9if6.ufs.sh/f/otX6HsU3RJwxIN8BqjupbtQfL2809cWhK6vsxF5oPYglreuU"
             style={{
               width: "90%",
               height: "90%",
@@ -91,7 +91,6 @@ export default async function Image() {
         >
           About Acme
         </div>
-
         {/* Decorative line */}
         <div
           style={{
@@ -101,7 +100,6 @@ export default async function Image() {
             marginBottom: 30,
           }}
         />
-
         {/* Description */}
         <div
           style={{
@@ -117,20 +115,20 @@ export default async function Image() {
     </div>,
     {
       ...size,
-    //   fonts: [
-    //     {
-    //       name: "Inter",
-    //       data: interBold,
-    //       style: "normal",
-    //       weight: 700,
-    //     },
-    //     {
-    //       name: "Inter",
-    //       data: interRegular,
-    //       style: "normal",
-    //       weight: 400,
-    //     },
-    //   ],
+      //   fonts: [
+      //     {
+      //       name: "Inter",
+      //       data: interBold,
+      //       style: "normal",
+      //       weight: 700,
+      //     },
+      //     {
+      //       name: "Inter",
+      //       data: interRegular,
+      //       style: "normal",
+      //       weight: 400,
+      //     },
+      //   ],
     }
   );
 }

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
+  metadataBase: new URL("https://sema-ftd-web.vercel.app/"),
   title: "Sema FTD",
   description:
     "Sema FTD is a student organization that aims to provide a platform for students to develop their skills and interests in the field of technology.",
