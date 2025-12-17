@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { caller } from "@/trpc/server";
 import { ImageResponse } from "next/og";
+import { Media } from "@/payload-types";
 // import { readFile } from "node:fs/promises";
 // import { join } from "node:path";
 
@@ -28,6 +29,11 @@ export default async function ImageImage({
 
   const data = await caller.activities.getOne({ activityId });
 
+  const dataWithMedia = {
+    ...data,
+    thumbnail: data.thumbnail as Media,
+  }
+
   return new ImageResponse(
     <div
       style={{
@@ -38,84 +44,15 @@ export default async function ImageImage({
         fontFamily: "Inter",
       }}
     >
-      {/* Left side - Image area with border */}
-      <div
+      <img
+        src={dataWithMedia.thumbnail?.url || ""}
         style={{
-          width: "50%",
-          height: "100%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          position: "relative",
+          width: "90%",
+          height: "90%",
+          objectFit: "cover",
         }}
-      >
-        <div
-          style={{
-            width: "90%",
-            height: "90%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: 48,
-            fontWeight: "bold",
-          }}
-        >
-          <img
-            src="https://97swgy9if6.ufs.sh/f/otX6HsU3RJwxIN8BqjupbtQfL2809cWhK6vsxF5oPYglreuU"
-            style={{
-              width: "90%",
-              height: "90%",
-              objectFit: "cover",
-            }}
-            alt="Sema FTD"
-          />
-        </div>
-      </div>
-
-      {/* Right side - Text content */}
-      <div
-        style={{
-          width: "50%",
-          height: "100%",
-          display: "flex",
-          flexDirection: "column",
-          padding: "60px 50px",
-          justifyContent: "center",
-        }}
-      >
-        <div
-          style={{
-            fontSize: 72,
-            fontWeight: "bold",
-            color: "#000000",
-            lineHeight: 1.2,
-            marginBottom: 20,
-            letterSpacing: "-2px",
-          }}
-        >
-          {data.title}
-        </div>
-        {/* Decorative line */}
-        <div
-          style={{
-            width: 80,
-            height: 5,
-            backgroundColor: "#000000",
-            marginBottom: 30,
-          }}
-        />
-        {/* Description */}
-        <div
-          style={{
-            fontSize: 28,
-            color: "#1a1a1a",
-            lineHeight: 1.5,
-            fontWeight: 400,
-          }}
-        >
-          {data.description}
-        </div>
-      </div>
+        alt="Sema FTD"
+      />
     </div>,
     {
       ...size,

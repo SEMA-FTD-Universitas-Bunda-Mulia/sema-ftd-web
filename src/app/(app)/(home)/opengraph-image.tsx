@@ -80,21 +80,13 @@ export default async function Image() {
             fontWeight: "bold",
             color: "#000000",
             lineHeight: 1.2,
-            marginBottom: 20,
+            marginBottom: 30,
             letterSpacing: "-2px",
           }}
         >
           Sema FTD
         </div>
-        {/* Decorative line */}
-        <div
-          style={{
-            width: 80,
-            height: 5,
-            backgroundColor: "#000000",
-            marginBottom: 30,
-          }}
-        />
+      
         {/* Description */}
         <div
           style={{
