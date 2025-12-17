@@ -12,6 +12,28 @@ import Link from "next/link";
 export const metadata = {
   title: "Info Sema FTD",
   description: "Info Sema FTD",
+  generator: "Sema FTD",
+  applicationName: "Website Sema FTD",
+  referrer: "origin-when-cross-origin",
+  keywords: [
+    "Sema FTD",
+    "Senat Mahasiswa FTD",
+    "UBM",
+    "FTD",
+    "Senat Mahasiswa FTD UBM",
+    "Senat Mahasiswa UBM",
+    "Info Sema FTD",
+    "Info Senat Mahasiswa FTD",
+    "Info Senat Mahasiswa FTD UBM",
+    "Info Senat Mahasiswa UBM",
+  ],
+  creator: "Christopher Haris",
+  publisher: "Christopher Haris",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
 };
 
 const data = [

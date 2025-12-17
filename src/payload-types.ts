@@ -166,6 +166,7 @@ export interface Media {
 export interface Blog {
   id: string;
   title: string;
+  author: string;
   date: string;
   description: string;
   link: string;
@@ -372,6 +373,7 @@ export interface MediaSelect<T extends boolean = true> {
  */
 export interface BlogsSelect<T extends boolean = true> {
   title?: T;
+  author?: T;
   date?: T;
   description?: T;
   link?: T;

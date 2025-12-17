@@ -5,7 +5,26 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Sema FTD",
-  description: "Sema FTD is a student organization that aims to provide a platform for students to develop their skills and interests in the field of technology.",
+  description:
+    "Sema FTD is a student organization that aims to provide a platform for students to develop their skills and interests in the field of technology.",
+  generator: "Sema FTD",
+  applicationName: "Website Sema FTD",
+  referrer: "origin-when-cross-origin",
+  keywords: [
+    "Sema FTD",
+    "Senat Mahasiswa FTD",
+    "UBM",
+    "FTD",
+    "Senat Mahasiswa FTD UBM",
+    "Senat Mahasiswa UBM",
+  ],
+  creator: "Christopher Haris",
+  publisher: "Christopher Haris",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
 };
 
 export default function Home() {

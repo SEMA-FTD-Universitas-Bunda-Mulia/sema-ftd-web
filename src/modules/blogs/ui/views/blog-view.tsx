@@ -27,14 +27,19 @@ export const BlogView = ({ blogId }: Props) => {
 
   return (
     <div className="px-4 lg:px-20 py-14 flex flex-col gap-4">
-      <div className="flex flex-col lg:flex-col lg:items-start gap-y-5">
-        <h1 className="text-4xl font-bold">{data.title}</h1>
-        <div className="flex gap-2 items-center">
-          <Calendar className="w-5 h-5" />
-          <p className="text-lg">{formatDate(data.date)}</p>
+      <div className="flex flex-col lg:flex-row justify-between lg:items-start">
+        <div className="flex flex-col gap-y-5">
+          <h1 className="text-4xl font-bold">{data.title}</h1>
+          <div className="flex gap-2 items-center">
+            <Calendar className="w-5 h-5" />
+            <p className="text-lg">{formatDate(data.date)}</p>
+          </div>
+        </div>
+        <div className="flex pt-2">
+          <p className="text-md"><span>By </span>{data.author}</p>
         </div>
       </div>
-      
+
       <div className="my-10">
         {data.content ? (
           <LexicalConverter data={data.content} />
@@ -57,7 +62,7 @@ export const BlogView = ({ blogId }: Props) => {
               {data.gallery.map((item) => (
                 <CarouselItem key={item.id} className="pt-1 md:basis-1/2">
                   <div className="p-1">
-                    <Card className="md:w-[500px]">
+                    <Card className="md:w-125">
                       <CardContent className="p-0 w-full">
                         {item.image && typeof item.image !== "string" && (
                           <div className="relative aspect-video w-full">
