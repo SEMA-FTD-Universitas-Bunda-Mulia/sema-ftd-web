@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 // Image metadata
-export const alt = "About Acme";
+export const alt = "Sema FTD";
 export const size = {
   width: 1200,
   height: 630,
@@ -15,16 +15,24 @@ export default async function Image() {
     // ImageResponse JSX element
     <div
       style={{
-        fontSize: 128,
-        background: "white",
-        width: "100%",
-        height: "100%",
         display: "flex",
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: "space-between",
+        width: "100%",
+        height: "100%",
       }}
     >
-      About Acme
+      <div style={{ width: "30%", marginRight: "2rem" }}>
+        <img
+          src="logo.png"
+          alt="FTD"
+          width={200}
+          height={200}
+        />
+      </div>
+      <div style={{ width: "70%", textAlign: "center" }}>
+        <h1>Sema FTD</h1>
+      </div>
     </div>,
     // ImageResponse options
     {
