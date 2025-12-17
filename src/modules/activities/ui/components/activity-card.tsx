@@ -17,7 +17,7 @@ export default function ActivityCard({ data, className }: Props) {
           className
         )}
       >
-        <div className="flex max-w-[100px] md:min-w-[200px]">
+        <div className="flex max-w-25 md:min-w-50">
           <Image
             src={data.thumbnail?.url || ""}
             alt="image"

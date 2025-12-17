@@ -40,7 +40,7 @@ const Page = () => {
           <span className="text-main">Connect</span>
         </h1>
       </div>
-      <div className="flex flex-col w-[200px] gap-5 mt-10">
+      <div className="flex flex-col w-50 gap-5 mt-10">
         <Button className="justify-between h-14">
           <Link
             href="https://www.instagram.com/ubm_semaftd/"

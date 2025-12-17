@@ -61,7 +61,7 @@ const data = [
 
 const Page = () => {
   return (
-    <div className="relative mx-auto h-full max-w-[800px] px-4 md:px-8 py-10">
+    <div className="relative mx-auto h-full max-w-200 px-4 md:px-8 py-10">
       <div className="flex flex-col my-10 gap-12">
         <div className="flex flex-col gap-6">
           <div className="grid gap-6 grid-cols-1 md:grid-cols-3">

@@ -37,7 +37,7 @@ export default function Home() {
           <br />
           <span className="text-main">Signtechers</span>
         </h1>
-        <div className="hidden md:block lg:w-[300px]">
+        <div className="hidden md:block lg:w-75">
           <Image src="/logo.png" alt="logo" width={300} height={300} />
         </div>
       </div>
