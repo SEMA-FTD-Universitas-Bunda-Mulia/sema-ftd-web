@@ -31,7 +31,7 @@ const getCurrentYearData = () => {
       label: String(year),
     });
   }
-
+  
   return years;
 };
 
@@ -77,7 +77,7 @@ export default function YearSelector() {
                         "ml-auto",
                         filters.year === year.value
                           ? "opacity-100"
-                          : "opacity-0"
+                          : "opacity-0",
                       )}
                     />
                   </CommandItem>

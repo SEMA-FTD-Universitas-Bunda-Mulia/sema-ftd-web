@@ -1,18 +1,21 @@
-import {
-  useQueryStates,
-  parseAsString,
-} from "nuqs";
+import { useQueryStates, parseAsString } from "nuqs";
 
-const getLatestYear = () => {
-  const currentYear = new Date().getFullYear();
+const getDefaultYear = () => {
+  const now = new Date();
+  const currentMonth = now.getMonth() + 1;
+  const defaultYear = now.getFullYear() - 1;
 
-  console.log(currentYear)
+  if (currentMonth <= 8) {
+    return defaultYear.toString();
+  }
 
-  return currentYear.toString();
+  return String(now.getFullYear());
 };
 
 export const params = {
-  year: parseAsString.withOptions({ clearOnDefault: true }).withDefault(getLatestYear()),
+  year: parseAsString
+    .withOptions({ clearOnDefault: true })
+    .withDefault(getDefaultYear()),
 };
 
 export const useMembersFilters = () => {
