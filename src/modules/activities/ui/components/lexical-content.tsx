@@ -1,4 +1,5 @@
 "use client";
+
 import type { DefaultNodeTypes } from "@payloadcms/richtext-lexical";
 import type { SerializedEditorState } from "@payloadcms/richtext-lexical/lexical";
 import {
@@ -27,13 +28,13 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({
   // Headings
   heading: ({ nodesToJSX, ...props }) => {
     const children = nodesToJSX({ nodes: props.node.children, ...props });
-    const Tag = `h${props.node.tag}` as keyof JSX.IntrinsicElements;
+    const Tag = `${props.node.tag}` as keyof JSX.IntrinsicElements;
     const headingStyles = {
-      h1: "text-4xl font-bold mb-6 mt-8 text-gray-900 dark:text-gray-100",
-      h2: "text-3xl font-bold mb-5 mt-7 text-gray-900 dark:text-gray-100",
-      h3: "text-2xl font-semibold mb-4 mt-6 text-gray-900 dark:text-gray-100",
-      h4: "text-xl font-semibold mb-3 mt-5 text-gray-800 dark:text-gray-200",
-      h5: "text-lg font-semibold mb-2 mt-4 text-gray-800 dark:text-gray-200",
+      h1: "text-3xl md:text-4xl font-bold mb-8 mt-8 text-gray-900 dark:text-gray-100",
+      h2: "text-2xl md:text-3xl font-bold mb-8 mt-7 text-gray-900 dark:text-gray-100",
+      h3: "text-xl md:text-2xl font-semibold mb-6 mt-6 text-gray-900 dark:text-gray-100",
+      h4: "text-lg md:text-xl font-semibold mb-4 mt-5 text-gray-800 dark:text-gray-200",
+      h5: "text-md md:text-lg font-semibold mb-3 mt-4 text-gray-800 dark:text-gray-200",
       h6: "text-base font-semibold mb-2 mt-3 text-gray-800 dark:text-gray-200",
     };
 

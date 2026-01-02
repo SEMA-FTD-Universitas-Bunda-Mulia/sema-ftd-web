@@ -117,7 +117,7 @@ export const ActivityView = ({ activityId }: Props) => {
       )}
 
       {/* Content */}
-      <div className="my-10">
+      <div className="md:my-10">
         {data.content ? (
           <LexicalConverter data={data.content} />
         ) : (
