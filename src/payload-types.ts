@@ -223,6 +223,10 @@ export interface Activity {
   date: string;
   description: string;
   tags: (string | Tag)[];
+  /**
+   * Instagram post link
+   */
+  instagram: string;
   link: string;
   thumbnail: string | Media;
   gallery?:
@@ -411,6 +415,7 @@ export interface ActivitiesSelect<T extends boolean = true> {
   date?: T;
   description?: T;
   tags?: T;
+  instagram?: T;
   link?: T;
   thumbnail?: T;
   gallery?:

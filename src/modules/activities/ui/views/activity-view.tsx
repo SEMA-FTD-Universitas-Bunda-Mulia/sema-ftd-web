@@ -126,9 +126,11 @@ export const ActivityView = ({ activityId }: Props) => {
       </div>
       <div className="flex flex-row justify-between">
         <div className="flex gap-2">
-          <Button onClick={() => setShow(!show)}>
-            {show ? "Hide" : "Show Post"}
-          </Button>
+          {data.instagram && (
+            <Button onClick={() => setShow(!show)}>
+              {show ? "Hide" : "Show"}
+            </Button>
+          )}
           <Link href={data.link} target="_blank">
             <Button>
               Open Link
@@ -136,9 +138,9 @@ export const ActivityView = ({ activityId }: Props) => {
             </Button>
           </Link>
         </div>
-        {show && data.link && (
+        {show && data.instagram && (
           <div className="ml-auto">
-            <InstagramEmbed url={data.link} width={350} />
+            <InstagramEmbed url={data.instagram} width={350} />
           </div>
         )}
       </div>

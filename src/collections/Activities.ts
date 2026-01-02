@@ -31,6 +31,14 @@ export const Activities: CollectionConfig = {
       required: true,
     },
     {
+      name: "instagram",
+      type: "text",
+      required: true,
+      admin: {
+        description: "Instagram post link",
+      },
+    },
+    {
       name: "link",
       type: "text",
       required: true,
