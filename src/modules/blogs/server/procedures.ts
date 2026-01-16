@@ -64,7 +64,6 @@ export const blogsRouter = createTRPCRouter({
 
       const formattedDocs = data.docs.map((doc) => ({
         ...doc,
-        thumbnail: doc.thumbnail as Media | null,
         gallery: doc.gallery
           ? doc.gallery.map((galleryItem) => ({
               ...galleryItem,
