@@ -170,7 +170,6 @@ export interface Blog {
   date: string;
   description: string;
   link: string;
-  thumbnail: string | Media;
   gallery?:
     | {
         image?: (string | null) | Media;
@@ -381,7 +380,6 @@ export interface BlogsSelect<T extends boolean = true> {
   date?: T;
   description?: T;
   link?: T;
-  thumbnail?: T;
   gallery?:
     | T
     | {

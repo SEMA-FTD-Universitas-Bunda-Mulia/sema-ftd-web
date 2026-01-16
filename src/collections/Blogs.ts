@@ -34,12 +34,6 @@ export const Blogs: CollectionConfig = {
       required: true,
     },
     {
-      name: "thumbnail",
-      type: "upload",
-      relationTo: "media",
-      required: true,
-    },
-    {
       name: "gallery",
       type: "array",
       fields: [

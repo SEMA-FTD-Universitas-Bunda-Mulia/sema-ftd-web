@@ -22,11 +22,7 @@ export default function BlogCard({ data }: Props) {
         <CardHeader>
           <CardTitle className="text-xl text-main-foreground">{data.title}</CardTitle>
           <CardDescription className="text-main-foreground">
-            {data.description
-              ? data.description.length > 100
-                ? `${data.description.substring(0, 100)}...`
-                : data.description
-              : ""}
+            {data.description}
           </CardDescription>
         </CardHeader>
         <CardFooter className="items-start">
