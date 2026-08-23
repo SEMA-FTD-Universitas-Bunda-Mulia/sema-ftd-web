@@ -93,7 +93,7 @@ export const MemberListView = ({}) => {
           <Tabs defaultValue="bph" className="w-full py-5">
             <TabsList className="grid max-w-[500px] grid-cols-5 gap-2 mx-auto">
               <TabsTrigger value="bph">BPH</TabsTrigger>
-              <TabsTrigger value="litbang">Litbang</TabsTrigger>
+              <TabsTrigger value="litbang">R&D</TabsTrigger>
               <TabsTrigger value="humas">Humas</TabsTrigger>
               <TabsTrigger value="medkom">Medkom</TabsTrigger>
               <TabsTrigger value="advokasi">Advokasi</TabsTrigger>

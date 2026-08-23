@@ -175,7 +175,7 @@ export const MembersList = () => {
                 key={member.id}
                 imageUrl={member.image?.url || ""}
                 caption={member.name}
-                description={`${member.position} Penelitian & Pengembangan Sema FTD ${member.year}`}
+                description={`${member.position} Research & Development Sema FTD ${member.year}`}
               />
             ))}
         </div>
@@ -190,7 +190,7 @@ export const MembersList = () => {
                 key={member.id}
                 imageUrl={member.image?.url || ""}
                 caption={member.name}
-                description={`${member.position} Penelitian & Pengembangan Sema FTD ${member.year}`}
+                description={`${member.position} Research & Development Sema FTD ${member.year}`}
               />
             ))}
         </div>
